@@ -2,7 +2,7 @@
 services:
 - type: web
   name: ixl-math
-  runtime: node
+  runtime: static
   repo: https://github.com/246928136986/nova
   plan: free
   region: oregon
