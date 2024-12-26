@@ -6,6 +6,5 @@ services:
   repo: https://github.com/246928136986/nova
   plan: free
   region: oregon
-  buildCommand: npm i
-  startCommand: node index.js
+  buildCommand: yarn build
 version: "1"
