@@ -5,6 +5,5 @@ services:
   runtime: static
   repo: https://github.com/246928136986/nova
   plan: free
-  region: oregon
   buildCommand: yarn build
 version: "1"
