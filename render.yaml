@@ -4,6 +4,5 @@ services:
   name: ixl-math
   runtime: static
   repo: https://github.com/246928136986/nova
-  plan: free
   buildCommand: yarn build
 version: "1"
