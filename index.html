@@ -52,6 +52,23 @@ body {
   gap: 18px;
 }
 
+.back {
+  position:absolute;
+  width: 150%;
+  height: 180%;
+  background: #1e1e1e;
+  border-radius: 30px;
+  box-shadow: 0 0 10px #0c0c0c;
+  z-index: -20; 
+  transform: translate(-0%, -30px);
+}
+
+.divider {
+  width: 130%;
+  height: 1px;
+  background: -webkit-linear-gradient(180deg, #d53369, #daae51);
+}
+
 .header {
   font-size: 42px;
   display: flex;
@@ -150,7 +167,7 @@ body {
             display: inline-block;
             font-size: 16px;
             cursor: pointer;
-            border-radius: 12px;
+            border-radius: 15px;
             transition: transform 0.5s;
             margin: 0 5px; 
         }
@@ -183,30 +200,127 @@ b {
   -webkit-text-fill-color: transparent;
 
 }
+
+.foot {
+  width: 50px;
+  height: 20px;
+  background: #000000;
+}
+
+.bottom {
+  position: absolute;
+  padding: 5px;
+  bottom: 20px;
+  text-align: center;
+  left: calc(50% - 165px);
+  color: #5a5a5a;
+  background: #1e1e1e;
+  border-radius: 50px;
+  font-size: 15px;
+  box-shadow: 0 0 10px #0c0c0c;
+}
+a {
+  color: #5a5a5a;
+}
+
   </style>
 
 </head>
 
 <body>
   <div class="container">
+    <div class="back"></div>
+
     <h1 style="font-weight: 400;">
       welcome to <b style="font-weight: 900;">nova</b>
     </h1>
-<p class="description">cure your boredom</p>
+<p class="description" id="splash"></p>
 <input type="text" class="input" placeholder="search the web...">
+<div class="divider"></div>
 <div class="bttn-container">
   <a onclick="localStorage.setItem('url', '/service/hvtrs8%2F-266%3B2%3A116%3B84.eivhwb%2Cim%2Fexoeq.jtol'); window.location.href = '/service/hvtrs8%2F-266%3B2%3A116%3B84.eivhwb%2Cim%2Fexoeq.jtol'" class="bttn">games</a>
   <a href="https://sites.google.com/view/1345987349587203958/movies" class="bttn">movies</a>
   <a onclick="localStorage.setItem('url', '/service/hvtrs8%2F-266%3B2%3A116%3B84.eivhwb%2Cim%2Fcbmuv.jtol'); window.location.href = '/service/hvtrs8%2F-266%3B2%3A116%3B84.eivhwb%2Cim%2Fcbmuv.jtol'" class="bttn">about</a>
 
+  
 </div>
+
+
   </div>
-
-
-
+  <div class="bottom">
+    <a onclick="localStorage.setItem('url', '/service/hvtrs8%2F-266%3B2%3A116%3B84.eivhwb%2Cim%2Fwpfavenoe.jtol'); window.location.href = '/service/hvtrs8%2F-266%3B2%3A116%3B84.eivhwb%2Cim%2Fwpfavenoe.jtol'" style="text-decoration: underline; margin-left: 10px;">update log</a> &#8226; 
+    <a href="https://sites.google.com/view/nova-links-9107248972/home" style="text-decoration: underline;">link hub</a> &#8226; 
+    <a href="https://forms.gle/bitdVUhd7PPs4uKSA" style="text-decoration: underline;">request forms</a> &#8226; 
+    <a onclick="localStorage.setItem('url', '/service/hvtrs8%2F-266%3B2%3A116%3B84.eivhwb%2Cim%2Fargdktq.jtol'); window.location.href = '/service/hvtrs8%2F-266%3B2%3A116%3B84.eivhwb%2Cim%2Fargdktq.jtol'" style="text-decoration: underline; margin-right: 10px;">credits</a>
+  </div>
 
   <script src="./assets/script.js" defer></script>
 
+  <script>
+    // Array of random strings
+    const randomStrings = [
+        "cure your boredom",
+        "gluten-free",
+        "contains javascript",
+        "as seen on tv",
+        "sponsored by nordvpn",
+        "epic gaemer moment",
+        "sir this is a wendy's",
+        "free robux",
+        "fortnite is cringe",
+        "i need coffee",
+        "sudo rm -rf /*",
+        "dQw4w9WgXcQ",
+        "batteries not included",
+        "approved by teachers (maybe)",
+        "bottom text",
+        "hack the gibson",
+        "for ages 6+",
+        "no cookies because i ate them",
+        "water is not wet",
+        "goofy ahh",
+        "side effects may include death",
+        "now with extra bugs",
+        "avery is cringe",
+        "powered by hamsters",
+        "are you a robot",
+        "average discord mod",
+        "when life gives you lemons",
+        "2+2 = fish",
+        "emotional damage",
+        "metal pipe falling",
+        "it's over 9000",
+        "get the hell outta dodge!",
+        "stop procrastinating",
+        "w h a t",
+        "funyuns are good",
+        "probably legal",
+        "p e a n u t",
+        "duolingo knows your address",
+        "look behind you",
+        "is your refrigerator running?",
+        "vs code is cool!",
+        "¡umop-apisdn",
+        "i hate c++",
+        "lorem ipsum dolor sit amet",
+        "welcome to the matrix",
+        "we put the 'fun' in funeral",
+        "not a pbs show",
+        "not pirated (probably)",
+        "35.7040744, 139.5577317",
+        "insert joke here",
+        "splash text"
+    ];
+
+    // Function to set random text in the <p> tag
+    function setRandomText() {
+        const randomIndex = Math.floor(Math.random() * randomStrings.length);
+        document.getElementById("splash").textContent = randomStrings[randomIndex];
+    }
+
+    // Set random text on page load
+    window.addEventListener('load', setRandomText);
+</script>
 </body>
 
 </html>
