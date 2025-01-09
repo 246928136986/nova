@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="assets/h.png" type="image/png">
-  <title>nova</title>
+  <title>Error 404 (Not Found)!!1</title>
+  <!--   if you are looking at this code, you are a nerd    -->
 
   <!-- Meta tags for SEO -->
   <meta property="og:title" content="nova">
@@ -50,6 +50,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 18px;
+  display: none;
 }
 
 .back {
@@ -156,7 +157,25 @@ body {
               justify-content: center;
               align-items: center;
               width: 100%;
+              display: none;
+
+
            }
+
+
+           .bttn-container-rl {
+              position: absolute;
+              bottom: -40%;
+              left: 50%;
+              transform: translateX(-50%);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+
+
+           }
+
 
         .bttn {
             background-color: grey;
@@ -218,17 +237,32 @@ b {
   border-radius: 50px;
   font-size: 15px;
   box-shadow: 0 0 10px #0c0c0c;
+  display: none;
 }
 a {
   color: #5a5a5a;
 }
+#myIframe {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  z-index: 500;
+  border: none;
+}
+
+
+.visible {
+            display: flex;
+        }
 
   </style>
 
 </head>
 
 <body>
-  <div class="container">
+  <iframe id="myIframe" src="google-error.html"></iframe>
+
+  <div class="container" id="maindiv">
     <div class="back"></div>
 
     <h1 style="font-weight: 400;">
@@ -237,7 +271,7 @@ a {
 <p class="description" id="splash"></p>
 <input type="text" class="input" placeholder="search the web...">
 <div class="divider"></div>
-<div class="bttn-container">
+<div class="bttn-container-rl">
   <a onclick="localStorage.setItem('url', '/service/hvtrs8%2F-266%3B2%3A116%3B84.eivhwb%2Cim%2Fexoeq.jtol'); window.location.href = '/service/hvtrs8%2F-266%3B2%3A116%3B84.eivhwb%2Cim%2Fexoeq.jtol'" class="bttn">games</a>
   <a href="https://sites.google.com/view/1345987349587203958/movies" class="bttn">movies</a>
   <a onclick="localStorage.setItem('url', '/service/hvtrs8%2F-266%3B2%3A116%3B84.eivhwb%2Cim%2Fcbmuv.jtol'); window.location.href = '/service/hvtrs8%2F-266%3B2%3A116%3B84.eivhwb%2Cim%2Fcbmuv.jtol'" class="bttn">about</a>
@@ -245,25 +279,117 @@ a {
   
 </div>
 
+
+
+
+
+
+
+
+
 <div class="back" style="transform: translate(0,270px); z-index: -50; height: 70%;"></div>
 
 
 <p style="transform: translate(0px,115px); height: 0px; margin: -10px; color: #afafaf;">popular sites</p>
 
-<div class="bttn-container" style="transform: translate(-50%, 330%);">
+<div class="bttn-container" id="popular1" style="transform: translate(-50%, 330%);">
   <a href="https://sites.google.com/view/nova-yt/home" class="bttn">youtube</a>
   <a onclick="localStorage.setItem('url', '/service/hvtrs8%2F-nmweg%2Clml'); window.location.href = '/service/hvtrs8%2F-nmweg%2Clml'" class="bttn">roblox</a>
   <a onclick="localStorage.setItem('url', '/service/hvtrs8%2F-cmonmctjgcmgs%2Ccmm'); window.location.href = '/service/hvtrs8%2F-cmonmctjgcmgs%2Ccmm'" class="bttn">coolmath</a>
 </div>
 
 
+<div class="bttn-container" id="popular2" style="transform: translate(-50%, 330%);">
+  <a onclick="localStorage.setItem('url', '/service/hvtrs8%2F-tkkvoi.aoo'); window.location.href = '/service/hvtrs8%2F-tkkvoi.aoo'" class="bttn">tiktok</a>
+  <a onclick="localStorage.setItem('url', '/service/hvtrs8%2F-cpaxyeaoeq.aoo'); window.location.href = '/service/hvtrs8%2F-cpaxyeaoeq.aoo'" class="bttn">crazygames</a>
+  <a onclick="localStorage.setItem('url', '/service/hvtrs8%2F-tuivcj.vv'); window.location.href = '/service/hvtrs8%2F-tuivcj.vv'" class="bttn">twitch</a>
+</div>
+
+<div class="bttn-container" id="popular3" style="transform: translate(-50%, 330%);">
+  <a onclick="localStorage.setItem('url', '/service/hvtrs8%2F-pme%2Ccmm'); window.location.href = '/service/hvtrs8%2F-pme%2Ccmm'" class="bttn">poeAI</a>
+  <a onclick="localStorage.setItem('url', '/service/hvtrs8%2F-lgxclmfdlg.aoo%2Friao%2F8%2Cpjp'); window.location.href = '/service/hvtrs8%2F-lgxclmfdlg.aoo%2Friao%2F8%2Cpjp'" class="bttn">lexaloffle</a>
+  <a onclick="localStorage.setItem('url', '/service/hvtrs8%2F-pmkk.aoo'); window.location.href = '/service/hvtrs8%2F-pmkk.aoo'" class="bttn">poki</a>
+</div>
+
+<div class="bttn-container" id="popular3" style="transform: translate(-50%, 330%);">
+  <a onclick="localStorage.setItem('url', '/service/hvtrs8%2F-qwinl%60ov.aoo'); window.location.href = '/service/hvtrs8%2F-qwinl%60ov.aoo'" class="bttn">quillbot</a>
+  <a onclick="localStorage.setItem('url', '/service/hvtrs8%2F-c%2Cak'); window.location.href = '/service/hvtrs8%2F-c%2Cak'" class="bttn">c.ai</a>
+  <a onclick="localStorage.setItem('url', '/service/hvtrs8%2F-wctvpcd%2Ccmm'); window.location.href = '/service/hvtrs8%2F-wctvpcd%2Ccmm'" class="bttn">wattpad</a>
+</div>
+
+<div class="bttn-container" id="popular3" style="transform: translate(-50%, 330%);">
+  <a onclick="localStorage.setItem('url', '/service/hvtrs8%2F-zctmgc.lev'); window.location.href = '/service/hvtrs8%2F-zctmgc.lev'" class="bttn">zatoga</a>
+  <a onclick="localStorage.setItem('url', '/service/hvtrs8%2F-cmoiigdwci.aoo'); window.location.href = '/service/hvtrs8%2F-cmoiigdwci.aoo'" class="bttn">cookieduck</a>
+  <a onclick="localStorage.setItem('url', '/service/hvtrs8%2F-1t1%2Clml'); window.location.href = '/service/hvtrs8%2F-1t1%2Clml'" class="bttn">1v1lol</a>
+</div>
+
+
+<p style="transform: translate(-170px,150px); height: 0px; margin: -10px; color: #afafaf; font-size: 25px;" id="decreaseBtn">◁</p>
+<p style="transform: translate(170px,150px); height: 0px; margin: -10px; color: #afafaf; font-size: 25px;" id="increaseBtn">▷</p>
+
+
+
+
+<script>
+  let counter = 1;
+
+  const texts = document.querySelectorAll('.bttn-container');
+
+  function updateVisibility() {
+      texts.forEach((text, index) => {
+          if (index + 1 === counter) {
+              text.classList.add('visible');
+          } else {
+              text.classList.remove('visible');
+          }
+      });
+  }
+
+  document.getElementById('increaseBtn').addEventListener('click', () => {
+      counter = (counter % 5) + 1; // Reset to 1 when counter reaches 6
+      updateVisibility();
+  });
+
+  document.getElementById('decreaseBtn').addEventListener('click', () => {
+      counter = ((counter - 2 + 5) % 5) + 1; // Ensure positive value and cycle back to 5 when reaches 0
+      updateVisibility();
+  });
+  updateVisibility();
+</script>
+
+
+
+
+
+
+
   </div>
-  <div class="bottom">
+  <div class="bottom" id="idk">
     <a onclick="localStorage.setItem('url', '/service/hvtrs8%2F-266%3B2%3A116%3B84.eivhwb%2Cim%2Fwpfavenoe.jtol'); window.location.href = '/service/hvtrs8%2F-266%3B2%3A116%3B84.eivhwb%2Cim%2Fwpfavenoe.jtol'" style="text-decoration: underline; margin-left: 10px;">update log</a> &#8226; 
     <a href="https://sites.google.com/view/nova-links-9107248972/home" style="text-decoration: underline;">link hub</a> &#8226; 
     <a href="https://forms.gle/bitdVUhd7PPs4uKSA" style="text-decoration: underline;">request forms</a> &#8226; 
     <a onclick="localStorage.setItem('url', '/service/hvtrs8%2F-266%3B2%3A116%3B84.eivhwb%2Cim%2Fargdktq.jtol'); window.location.href = '/service/hvtrs8%2F-266%3B2%3A116%3B84.eivhwb%2Cim%2Fargdktq.jtol'" style="text-decoration: underline; margin-right: 10px;">credits</a>
   </div>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var div = document.getElementById("maindiv");
+      setTimeout(function() {
+        div.style.display = "flex"; // Show the container after 0.5 seconds
+      }, 300);
+    });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var div = document.getElementById("idk");
+    setTimeout(function() {
+      div.style.display = "inline"; // Show the container after 0.5 seconds
+    }, 300);
+  });
+</script>
+
 
   <script src="./assets/script.js" defer></script>
 
@@ -350,7 +476,42 @@ a {
         "customize and save",
         "taste the rainbow",
         "where is my supersuit?",
-        "are you sure about that"
+        "are you sure about that",
+        "</my-sanity>",
+        "hampter",
+        "skibidi ohio fanum tax sigma",
+        "do your homework (maybe)",
+        "not a proxy",
+        "this is fine.",
+        "surprised_pikachu.png",
+        "is this a pigeon?",
+        "woah. this is worthless!",
+        "put the fries in the bag, lil bro",
+        "globglogabgalab",
+        "knee surgery tomorrow 😭😭🙏",
+        "execute order 66",
+        "pineapple pizza is mid",
+        "ah shoot, here we go again",
+        "may the force be with you",
+        "we ain't in kansas anymore",
+        "i'm walkin' here!",
+        "you're killin' me, smalls",
+        "say hello to my little friend!",
+        "you're a wizard, harry!",
+        "you shall not pass!",
+        "just keep swimming",
+        "avengers...assemble",
+        "my name is jeff",
+        "it's over, anakin!",
+        "get off my lawn!",
+        "may the odds be ever in your favor",
+        "do you want to play a game?",
+        "i didn't order ratvioli",
+        "number 15, burger king foot lettuce",
+        "that muffin is lookin like a hamster...",
+        "don't get caught",
+        "for educational purposes",
+        "don't try this at home!"
     ];
 
     // Function to set random text in the <p> tag
@@ -362,6 +523,48 @@ a {
     // Set random text on page load
     window.addEventListener('load', setRandomText);
 </script>
+
+<script>
+  var iframe = document.getElementById('myIframe');
+
+  iframe.addEventListener('load', function() {
+      var iframeButton = iframe.contentDocument.getElementById('button');
+      
+      iframeButton.addEventListener('click', function() {
+          iframe.style.display = 'none';
+          sessionStorage.setItem('iframeHidden', 'true');
+          document.title = "nova";
+
+          var link = document.querySelector("link[rel~='icon']");
+if (!link) {
+    link = document.createElement('link');
+    link.rel = 'icon';
+    document.head.appendChild(link);
+}
+link.href = 'assets/h.png';
+
+      });
+  });
+
+  // Check if the iframe was hidden previously
+  var isIframeHidden = sessionStorage.getItem('iframeHidden');
+  if (isIframeHidden === 'true') {
+      iframe.style.display = 'none';
+      document.title = "nova";
+
+      var link = document.querySelector("link[rel~='icon']");
+if (!link) {
+    link = document.createElement('link');
+    link.rel = 'icon';
+    document.head.appendChild(link);
+}
+link.href = 'assets/h.png';
+
+
+  }
+</script>
+
+
 </body>
 
 </html>
