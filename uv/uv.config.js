@@ -116,7 +116,7 @@ const blocked = [
   
   self.__uv$config = {
     prefix: "/service/",
-    bare: "tomp.app",
+    bare: "https://tomp.app",
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
     handler: "/uv/uv.handler.js",
