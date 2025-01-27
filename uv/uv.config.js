@@ -101,8 +101,7 @@ const blocked = [
     "cs.luckyorange.net",
     "an.facebook.com",
     "static.ads-twitter.com",
-    "ads-api.twitter.com",
-    "wo.seasonquira.com"
+    "ads-api.twitter.com"
   ];
   var adblock = 1;
 
