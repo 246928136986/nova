@@ -155,5 +155,5 @@ self.__uv$config = {
         }
     
         return request;
-};
+}
 }
