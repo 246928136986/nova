@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            * {
+                width: 100vw;
+                height: 100vh;
+            }
+        </style>
+    </head>
+    <body>
+        <iframe id="myIframe" src="/service/hvtrs8%2F-fpegk%2Ctm%2F"></iframe>
+        <script>
+            // Function to remove external scripts from the iframe
+            function removeExternalScripts() {
+                const iframe = document.getElementById('myIframe');
+                const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+    
+                // Check if the iframe is accessible
+                if (iframeDocument) {
+                    const scripts = iframeDocument.getElementsByTagName('script');
+    
+                    for (let i = scripts.length - 1; i >= 0; i--) {
+                        const script = scripts[i];
+                        const src = script.getAttribute('src');
+    
+                        // Check if the src is external
+                        if (src && !src.startsWith(window.location.origin)) {
+                            script.parentNode.removeChild(script); // Remove the external script
+                        }
+                    }
+                } else {
+                    console.error("Unable to access iframe contents due to same-origin policy. you are a blockhead");
+                }
+            }
+    
+            // Run the function after the iframe has loaded
+            document.getElementById('myIframe').onload = function() {
+                removeExternalScripts();
+            };
+        </script>
+    </body>
+</html>
