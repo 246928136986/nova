@@ -25,6 +25,8 @@
             document.getElementById('myIframe').onload = function() {
                 const iframe = document.getElementById('myIframe');
                 const iframeWindow = iframe.contentWindow;
+    
+                // Override window.open to block new tabs/windows
                 blockNewTabs(iframeWindow);
             };
         </script>
