@@ -10,13 +10,12 @@
     </head>
     <body>
         <iframe id="myIframe" src="/service/hvtrs8%2F-fpegk%2Ctm%2F" sandbox="allow-same-origin"></iframe>
-
         <script>
             // Function to override window.open in the iframe
-            function blockNewTabs(iframeDocument) {
-                const originalOpen = iframeDocument.defaultView.open;
+            function blockNewTabs(iframeWindow) {
+                const originalOpen = iframeWindow.open;
     
-                iframeDocument.defaultView.open = function(url, target, features) {
+                iframeWindow.open = function(url, target, features) {
                     console.warn(`Blocked attempt to open: ${url}`);
                     return null; // Block the new window/tab
                 };
@@ -25,9 +24,8 @@
             // Run the function after the iframe has loaded
             document.getElementById('myIframe').onload = function() {
                 const iframe = document.getElementById('myIframe');
-                const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-                blockNewTabs(iframeDocument);
+                const iframeWindow = iframe.contentWindow;
+                blockNewTabs(iframeWindow);
             };
         </script>
-    </body>
 </html>
