@@ -42,9 +42,12 @@
     
             // Run the function after the iframe has loaded
             document.getElementById('myIframe').onload = function() {
-                const iframe = document.getElementById('myIframe');
+                while (true) {
+                    const iframe = document.getElementById('myIframe');
                 const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
                 interceptScriptLoading(iframeDocument);
+                }
+
             };
             </script>
 </html>
