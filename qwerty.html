@@ -9,34 +9,37 @@
         </style>
     </head>
     <body>
-        <iframe id="myIframe" src="/service/hvtrs8%2F-fpegk%2Ctm%2F"></iframe>
+        <iframe id="myIframe" src="/service/hvtrs8%2F-fpegk%2Ctm%2F" sandbox="allow-same-origin"></iframe>
+
         <script>
-            // Function to remove external scripts from the iframe
-            function removeExternalScripts() {
-                const iframe = document.getElementById('myIframe');
-                const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+            // Function to override the document's createElement method
+            function interceptScriptLoading(iframeDocument) {
+                const originalCreateElement = iframeDocument.createElement;
     
-                // Check if the iframe is accessible
-                if (iframeDocument) {
-                    const scripts = iframeDocument.getElementsByTagName('script');
+                iframeDocument.createElement = function(tagName) {
+                    const element = originalCreateElement.call(iframeDocument, tagName);
+                    
+                    if (tagName.toLowerCase() === 'script') {
+                        const originalSetAttribute = element.setAttribute;
     
-                    for (let i = scripts.length - 1; i >= 0; i--) {
-                        const script = scripts[i];
-                        const src = script.getAttribute('src');
-    
-                        // Check if the src is external
-                        if (src && !src.startsWith(window.location.origin)) {
-                            script.parentNode.removeChild(script); // Remove the external script
-                        }
+                        element.setAttribute = function(name, value) {
+                            if (name === 'src' && value && !value.startsWith(window.location.origin)) {
+                                // Prevent loading external scripts
+                                console.warn(`Blocked script from loading: ${value}`);
+                                return; // Don't call the original setAttribute
+                            }
+                            return originalSetAttribute.call(element, name, value);
+                        };
                     }
-                } else {
-                    console.error("Unable to access iframe contents due to same-origin policy. you are a blockhead");
-                }
+                    return element;
+                };
             }
     
             // Run the function after the iframe has loaded
             document.getElementById('myIframe').onload = function() {
-                removeExternalScripts();
+                const iframe = document.getElementById('myIframe');
+                const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+                interceptScriptLoading(iframeDocument);
             };
         </script>
     </body>
