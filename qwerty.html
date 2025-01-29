@@ -39,13 +39,16 @@
                     return element;
                 };
             }
-    
+
             // Run the function after the iframe has loaded
             document.getElementById('myIframe').onload = function() {
                 while (true) {
                     const iframe = document.getElementById('myIframe');
                 const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
                 interceptScriptLoading(iframeDocument);
+                setTimeout(function() {
+  console.log("Hello after 2 seconds!");
+}, 1000);
                 }
 
             };
