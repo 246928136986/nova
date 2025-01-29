@@ -9,29 +9,16 @@
         </style>
     </head>
     <body>
-        <iframe id="myIframe" src="/service/hvtrs8%2F-fpegk%2Ctm%2F" sandbox="allow-same-origin allow-popups"></iframe>
+        <iframe id="myIframe" src="/service/hvtrs8%2F-fpegk%2Ctm%2F" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
 
         <script>
-            // Function to override the document's createElement method
-            function interceptScriptLoading(iframeDocument) {
-                const originalCreateElement = iframeDocument.createElement;
+            // Function to override window.open in the iframe
+            function blockNewTabs(iframeDocument) {
+                const originalOpen = iframeDocument.defaultView.open;
     
-                iframeDocument.createElement = function(tagName) {
-                    const element = originalCreateElement.call(iframeDocument, tagName);
-                    
-                    if (tagName.toLowerCase() === 'script') {
-                        const originalSetAttribute = element.setAttribute;
-    
-                        element.setAttribute = function(name, value) {
-                            if (name === 'src' && value && !value.startsWith(window.location.origin)) {
-                                // Prevent loading external scripts
-                                console.warn(`Blocked script from loading: ${value}`);
-                                return; // Don't call the original setAttribute
-                            }
-                            return originalSetAttribute.call(element, name, value);
-                        };
-                    }
-                    return element;
+                iframeDocument.defaultView.open = function(url, target, features) {
+                    console.warn(`Blocked attempt to open: ${url}`);
+                    return null; // Block the new window/tab
                 };
             }
     
@@ -39,7 +26,7 @@
             document.getElementById('myIframe').onload = function() {
                 const iframe = document.getElementById('myIframe');
                 const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-                interceptScriptLoading(iframeDocument);
+                blockNewTabs(iframeDocument);
             };
         </script>
     </body>
