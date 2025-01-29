@@ -10,24 +10,41 @@
     </head>
     <body>
         <iframe id="myIframe" src="/service/hvtrs8%2F-bpodlkx%2Cca%2F"></iframe>
+
         <script>
-            // Function to override window.open in the iframe
-            function blockNewTabs(iframeWindow) {
-                const originalOpen = iframeWindow.open;
+            // Function to intercept script loading
+            function interceptScriptLoading(iframeDocument) {
+                const originalCreateElement = iframeDocument.createElement;
     
-                iframeWindow.open = function(url, target, features) {
-                    console.warn(`Blocked attempt to open: ${url}`);
-                    return null; // Block the new window/tab
+                // Override the createElement method
+                iframeDocument.createElement = function(tagName) {
+                    const element = originalCreateElement.call(iframeDocument, tagName);
+                    
+                    // Check if the element is a script
+                    if (tagName.toLowerCase() === 'script') {
+                        const originalSetAttribute = element.setAttribute;
+    
+                        // Override setAttribute to filter src attributes
+                        element.setAttribute = function(name, value) {
+                            if (name === 'src') {
+                                // Block if src does not contain "example1"
+                                if (value && !value.includes('bpodlkx%2Cca')) {
+                                    console.warn(`Blocked script from loading: ${value}`);
+                                    return; // Prevent loading this script
+                                }
+                            }
+                            return originalSetAttribute.call(element, name, value);
+                        };
+                    }
+                    return element;
                 };
             }
     
             // Run the function after the iframe has loaded
             document.getElementById('myIframe').onload = function() {
                 const iframe = document.getElementById('myIframe');
-                const iframeWindow = iframe.contentWindow;
-    
-                // Override window.open to block new tabs/windows
-                blockNewTabs(iframeWindow);
+                const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+                interceptScriptLoading(iframeDocument);
             };
-        </script>
+            </script>
 </html>
