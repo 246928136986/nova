@@ -10,30 +10,33 @@
                 padding: 0;
             }
         </style>
+            <script>
+                function preventNewTabs() {
+                    const iframe = document.getElementById('myIframe');
+                    const iframeWindow = iframe.contentWindow;
+        
+                    // Check if the iframe is loaded and accessible
+                    iframe.onload = function() {
+                        // Override the window.open function within the iframe
+                        iframeWindow.open = function() {
+                            alert("Opening new tabs is blocked.");
+                        };
+        
+                        // Prevent default behavior for anchor tags
+                        const links = iframeWindow.document.querySelectorAll('a');
+                        links.forEach(link => {
+                            link.addEventListener('click', function(event) {
+                                event.preventDefault();
+                                alert("Links in the iframe are blocked from opening new tabs.");
+                            });
+                        });
+                    };
+                }
+            </script>
     </head>
     <body>
-        <iframe id="myIframe" src="/service/hvtrs8%2F-a%60lgfniz.zyx%2F" sandbox="allow-same-origin allow-scripts allow-popups-to-escape-sandbox"></iframe>
-        <script>
-            // Function to prevent opening new tabs
-            function preventNewTabs(event) {
-                event.preventDefault();
-                alert("Opening new tabs is blocked.");
-            }
-    
-            // Attach the event listeners after the document is loaded
-            window.onload = function() {
-                // Prevent default behavior for all links
-                const links = document.querySelectorAll('a[target="_blank"], a[target="_new"]');
-                links.forEach(link => {
-                    link.addEventListener('click', preventNewTabs);
-                });
-    
-                // Override window.open to prevent new tabs
-                window.open = function() {
-                    alert("Opening new tabs is blocked.");
-                };
-            };
-        </script>
+        <iframe id="myIframe" src="/service/hvtrs8%2F-a%60lgfniz.zyx%2F"></iframe>
+
         <script>
             alert("Welcome to the new movies page, we have left behind the old movies site and have moved to a new one. This means you should be able to find practically any movie/show you want, if you want something specific, click on the searchbar!");
         </script>
