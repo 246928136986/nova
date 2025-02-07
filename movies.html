@@ -36,7 +36,27 @@
     </head>
     <body>
         <iframe id="myIframe" src="/service/hvtrs8%2F-a%60lgfniz.zyx%2F"></iframe>
-
+        <script>
+            // Function to prevent opening new tabs
+            function preventNewTabs(event) {
+                event.preventDefault();
+                alert("Opening new tabs is blocked.");
+            }
+    
+            // Attach the event listeners after the document is loaded
+            window.onload = function() {
+                // Prevent default behavior for all links
+                const links = document.querySelectorAll('a[target="_blank"], a[target="_new"]');
+                links.forEach(link => {
+                    link.addEventListener('click', preventNewTabs);
+                });
+    
+                // Override window.open to prevent new tabs
+                window.open = function() {
+                    alert("Opening new tabs is blocked.");
+                };
+            };
+        </script>
         <script>
             alert("Welcome to the new movies page, we have left behind the old movies site and have moved to a new one. This means you should be able to find practically any movie/show you want, if you want something specific, click on the searchbar!");
         </script>
