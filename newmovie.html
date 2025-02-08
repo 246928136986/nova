@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="assets/apexnet.jpg" type="image/png">
+  <title>nova</title>
+
+  <!-- Meta tags for SEO -->
+  <meta property="og:title" content="asdf">
+  <meta property="og:description"
+    content="asdf" />
+  <meta property="og:image" content="assets/apexnet.jpg" />
+  <meta name="theme-color" content="#262262" />
+
+  <!-- Styles and fonts -->
+  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+
+  <!-- Scripts -->
+  <script src="./uv/uv.bundle.js"></script>
+  <script src="./uv/uv.config.js"></script>
+  <script src="./assets/register-sw.js"></script>
+  <style>
+    /* Some styling to make it look good */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #151515;
+  color: white;
+  font-family: 'IBM Plex Sans';
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.header {
+  font-size: 42px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  height: 42px;
+  width: 42px;
+}
+
+.description {
+  font-size: 16px;
+  color: #afafaf;
+}
+
+.input {
+  width: 100%;
+  background-color: #1e1e1e;
+  border: 0;
+  border-radius: 30px;
+  font-size: 16px;
+  padding: 12px;
+  text-align: center;
+  color: white;
+  outline: none;
+  transition: color;
+  transition-duration: 100ms;
+  box-shadow: 0 0 10px #000000;
+}
+
+.input:disabled {
+  color: #757575;
+}
+
+.logo {
+  height: 55px;
+  width: 55px;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 24px #685dff);
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  padding: 18px;
+  padding-left: 24px;
+  padding-right: 30px;
+}
+
+.footer a,
+.footer a:visited {
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  text-underline-offset: 2.5px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer div {
+  display: flex;
+  gap: 26px;
+}
+   .bttn-container {
+              position: absolute;
+              bottom: -40%;
+              left: 50%;
+              transform: translateX(-50%);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+           }
+
+        .bttn {
+            background-color: grey;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: transform 0.5s;
+            margin: 0 5px; 
+        }
+
+        .bttn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 5px #000000;
+            background: -webkit-linear-gradient(180deg, #d53369, #daae51);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+::placeholder {
+  background: -webkit-linear-gradient(180deg, #d53369, #daae51);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 80%;
+}
+
+
+b {
+  background: -webkit-linear-gradient(180deg, #d53369, #daae51);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <h1 style="font-weight: 400; font-size: 30px;">
+      notice: <b style="font-weight: 900;">new experimental movies page!</b>
+    </h1>
+<p class="description">
+    we are experimenting with a new movies page that allows you to watch practically anything you want.
+    however, there may be bugs or glitches. you can choose to go to the regular movies page if you would like.
+  </p>
+
+  <div class="bttn-container" id="popular1">
+    <a href="movies.html" class="bttn">I would like to try out the new movies page!</a>
+  </div>
+  
+  <div class="bttn-container" id="popular1" style="transform: translate(-50%, 60px);">
+    <a href="https://sites.google.com/view/1345987349587203958/movies" class="bttn">I would like to be taken to the regular movies page</a>
+  </div>
+  
+
+  </div>
+
+
+
+
+  <script src="./assets/script.js" defer></script>
+</body>
+
+</html>
