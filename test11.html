@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: courierNew;
+            src: url(Courier\ New.ttf);
+        }
+
+        * {
+            font-family: courierNew;
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+    <p style="color: white;">
+    The url or website that you requested was not found on this server.<br>
+    It most likely does not exist.<br><br><br><br><br>
+    Details:<br><br>
+    http.error: 404<br>
+    http.error.descriptor: "No such file or directory exists within this origin"<br>
+    userAgent: <b id="useragent" style="font-weight: 100;"></b>
+    </p>
+
+    <script>
+        let inputSequence = '';
+        const targetSequence = 'opensesame';
+
+        document.addEventListener('keydown', function(event) {
+            inputSequence += event.key; // Append the pressed key to the sequence
+
+            // Check if the input sequence matches the target sequence
+            if (inputSequence === targetSequence) {
+                alert('passcode entered');
+                inputSequence = ''; // Reset the sequence after detection
+            }
+
+            // Limit the length of the input sequence to the target sequence length
+            if (inputSequence.length > targetSequence.length) {
+                inputSequence = inputSequence.slice(1); // Remove the oldest character
+            }
+        });
+    </script>
+
+
+    <script>
+        let userAgent = navigator.userAgent;
+        console.log(userAgent);
+        const element = document.getElementById('useragent');
+        element.textContent = userAgent;
+    </script>
+</body>
+</html>
