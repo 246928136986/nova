@@ -17,17 +17,26 @@
 </head>
 <body style="background-color: black;">
     <p style="color: white;">
-    The url or website that you requested was not found on this server.<br>
+    The URL or website that you requested was not found on this server.<br>
     It most likely does not exist.<br><br><br><br><br>
     Details:<br><br>
     http.error: 404<br>
     http.error.descriptor: "No such file or directory exists within this origin"<br>
-    userAgent: <b id="useragent" style="font-weight: 100;"></b>
+    errorId: <b id="error-id" style="font-weight: 100;">fetching...</b><br>
+
+    userAgent: <b id="useragent" style="font-weight: 100;"></b><br>
+    userIp: <b id="ip-address" style="font-weight: 100;">fetching...</b>
     </p>
 
     <script>
+
+        const randomNumber = Math.floor(Math.random() * 10000001) + 99999999; // Generates a number between 100 and 200
+        document.getElementById("error-id").textContent = randomNumber;
+
+        let randString = String(randomNumber)
+
         let inputSequence = '';
-        const targetSequence = 'opensesame';
+        const targetSequence = randString.slice(6,9);
 
         document.addEventListener('keydown', function(event) {
             inputSequence += event.key; // Append the pressed key to the sequence
@@ -43,6 +52,19 @@
                 inputSequence = inputSequence.slice(1); // Remove the oldest character
             }
         });
+    </script>
+
+
+    <script>
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ip-address').textContent = data.ip;
+            })
+            .catch(error => {
+                document.getElementById('ip-address').textContent = 'Error fetching IP address';
+                console.error('Error:', error);
+            });
     </script>
 
 
